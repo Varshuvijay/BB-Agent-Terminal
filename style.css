@@ -1,0 +1,240 @@
+html, body {
+  height: 100%;
+  overflow: hidden; 
+  margin: 0;
+}
+
+
+body {
+  background: url("linux bg.jpg") no-repeat center center fixed;
+  background-size: cover; 
+  color: #00ff00;
+  font-family: monospace;
+  z-index: 1;
+  padding: 20px;
+  overflow-x: hidden;
+  font-size: 14px;
+  margin-bottom: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+
+body, #terminal, .input-line, pre {
+  color: #00ff00; 
+  text-shadow: 0 0 5px #00ff00,
+  0 0 10px #00ff00,
+  0 0 0px #00ff00,
+  0 0 20px #00ff00;
+}
+
+.black-box {
+  position: relative;
+  width: 70%;
+  max-width: 1600px; 
+  height: 80vh; 
+  margin: auto;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 255, 0, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+  padding: 20px;
+  padding-top: 45px;
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+  box-sizing: border-box;
+  overflow: hidden; 
+}
+
+.window-buttons {
+  display: flex;
+  gap: 10px;
+  padding: 12px 15px;
+  position: absolute;
+  top: 10px;
+  left: 10;
+}
+
+.window-buttons .btn {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.9;
+  box-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
+
+.window-buttons .red {
+  background: #ff5f56;
+}
+
+.window-buttons .yellow {
+  background: #ffbd2e;
+}
+
+.window-buttons .green {
+  background: #27c93f;
+}
+
+.terminal {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: hidden;
+}
+
+#terminal {
+  flex: 1;
+  overflow-y: auto; 
+  padding-right: 10px;
+  white-space: pre-wrap;
+  line-height: 1.4em;
+  padding-top: 40px;
+  margin-bottom: 40px;
+  scroll-behavior: smooth;
+  margin-top: -58px;
+
+  padding-left: 16px;
+}
+
+
+.input-line {   
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute; 
+  bottom: 20px;
+  left:160px;
+  right:160px;
+  border: 1px solid rgba(0, 255, 0, 0.4);
+  border-radius: 10px;
+  margin-bottom: 1%;
+  background: rgba(23, 23, 23, 0.9);
+  padding: 8px 50px;
+}
+
+#terminal-wrapper {
+  height: calc(100% - 100px);  
+  overflow-y: auto;
+  padding: 20px;
+  scroll-behavior: smooth; 
+}
+
+.input-line input {   
+  background: transparent;
+  border: none;
+  color: #00ff00;
+  font-family: monospace;
+  font-size: 14px;
+  outline: none;
+  z-index: 2;    
+  position: relative;
+  padding-left: 16px;
+}
+
+.input-line span {
+  color: #00ff00;
+}
+
+.hidden {
+  display: none;
+}
+
+#commandInput {     
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #00ff00;
+  font-size: 1em;
+  resize: none;   
+  overflow: hidden;
+  line-height: 1.4em;
+  font-family: 'Courier New', monospace; 
+}
+
+.black-box.alert {
+  box-shadow: 0 0 40px 6px rgba(255,0,0,0.35), inset 0 0 40px rgba(255,0,0,0.25);
+  border-color: rgba(255,0,0,0.8);
+  transition: box-shadow 150ms, border-color 150ms;
+}
+
+.red-glow {
+  color: #ff3333 !important;
+  text-shadow: 0 0 5px #ff0000,
+               0 0 10px #ff0000,
+               0 0 20px #ff0000,
+               0 0 40px #ff0000;
+}
+
+
+.glitch {
+  animation: flicker 1s infinite;
+}
+
+.alert {
+  animation: redFlash 0.5s ease-in-out;
+}
+
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+.ascii-heart {
+  color: #ff66ff;
+}
+
+video{
+  display: block;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00ff99;
+  margin-left: -200px;
+  margin-bottom: 4%;
+}
+
+img {
+  max-width: 300px;
+  margin-top: 10px;
+}
+
+.audio-container {
+  max-width: 90%;
+  overflow: hidden;
+  white-space: normal;
+}
+
+audio {
+  width: 40%;
+  padding-top: 10px;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; }
+  50% { text-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00; }
+  100% { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; }
+}
+
+.glow {
+  animation: glow 2s infinite alternate;
+}
+
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#003300, #00ff00);
+  border-radius: 0;
+}
+
